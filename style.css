@@ -474,3 +474,4 @@ html:not(.js) .loader { display: none; }
 .footer a, .link, .nav a { transition: color .4s cubic-bezier(.22, 1, .36, 1); }
 .hero__photo img { object-position: 50% 0% !important; }
 .hero__photo img { object-position: 50% 0% !important; }
+.hero__photo img { object-position: 50% 62% !important; }
