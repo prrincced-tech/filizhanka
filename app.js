@@ -86,6 +86,38 @@
     }
   }
 
+  /* ---------- menu on phones and tablets: tap a row to unfold its photo ---------- */
+  const pointerFine = matchMedia('(hover: hover) and (pointer: fine)');
+  const tapMode = () => !pointerFine.matches || innerWidth < 1024;
+  const pvSrc = $$('.menu__preview img').map(i => i.getAttribute('src'));
+  $$('.menu .item').forEach(it => {
+    const name = it.querySelector('span').firstChild.textContent.trim();
+    const more = document.createElement('i');
+    more.className = 'item__more';
+    more.setAttribute('aria-hidden', 'true');
+    const box = document.createElement('div');
+    box.className = 'item__photo';
+    box.innerHTML = `<div><img alt="${name}" loading="lazy" decoding="async"></div>`;
+    it.append(more, box);
+    const toggle = () => {
+      if (!tapMode()) return;
+      const open = !it.classList.contains('is-open');
+      $$('.menu .item.is-open').forEach(o => { if (o !== it) { o.classList.remove('is-open'); o.setAttribute('aria-expanded', 'false'); } });
+      if (open) { const im = box.querySelector('img'); if (!im.getAttribute('src')) im.src = pvSrc[+it.dataset.img] || ''; }
+      it.classList.toggle('is-open', open);
+      it.setAttribute('aria-expanded', open);
+      setTimeout(() => window.ScrollTrigger && ScrollTrigger.refresh(), 560);
+    };
+    const setRole = () => {
+      if (tapMode()) { it.setAttribute('role', 'button'); it.tabIndex = 0; it.setAttribute('aria-expanded', it.classList.contains('is-open')); }
+      else { it.removeAttribute('role'); it.removeAttribute('tabindex'); it.removeAttribute('aria-expanded'); it.classList.remove('is-open'); }
+    };
+    setRole();
+    addEventListener('resize', setRole);
+    it.addEventListener('click', toggle);
+    it.addEventListener('keydown', e => { if (tapMode() && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggle(); } });
+  });
+
   /* ---------- map: asleep until clicked, asleep again once scrolled away ---------- */
   const map = $('.map');
   if (map) {
