@@ -475,3 +475,10 @@ html:not(.js) .loader { display: none; }
 .hero__photo img { object-position: 50% 0% !important; }
 .hero__photo img { object-position: 50% 0% !important; }
 .hero__photo img { object-position: 50% 62% !important; }
+.hero__photo img { object-position: 50% 45% !important; }
+@media (max-width: 1023px) {
+  .hero__photo { height: auto !important; aspect-ratio: 4 / 5; max-height: 82vh; }
+  .hero__photo img { object-position: 50% 40% !important; }
+}
+@media (max-width: 1023px) { .hero__photo { max-height: none; aspect-ratio: 1 / 1; width: 100%; } }
+@media (max-width: 767px) { .hero__photo { aspect-ratio: 4 / 5; } }
