@@ -365,3 +365,10 @@ html:not(.js) .loader { display: none; }
   .map__unlock { left: 12px; right: auto; }
   .map.is-moving .map__card { transform: none; opacity: 1; }
 }
+
+/* map card on the left, the unlock button on the right */
+.map__wrap { justify-content: flex-start; }
+.map__unlock { left: auto; right: var(--pad); }
+.map__card { transform-origin: left center; }
+.map.is-moving .map__card { transform: translateX(-62%) scale(.92); }
+@media (max-width: 767px) { .map__unlock { left: auto; right: 12px; } .map.is-moving .map__card { transform: none; } }
