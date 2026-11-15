@@ -271,3 +271,30 @@ html:not(.js) .loader { display: none; }
   .pick { flex: 0 0 72%; scroll-snap-align: start; }
   .pick__row h3 { font-size: 18px; }
 }
+
+/* ---------- top bar (status · address · phone) ---------- */
+.topbar { background: var(--ink); color: #f1e7dc; font-size: 13px; }
+.topbar__row { display: flex; align-items: center; justify-content: center; gap: 8px 22px; height: 34px; flex-wrap: wrap; }
+.topbar a { color: #f1e7dc; text-decoration: none; font-weight: 600; }
+.topbar a:hover { text-decoration: underline; }
+.topbar .open-now { margin: 0; color: #8fd3a5; font-size: 13px; }
+.topbar .open-now.is-closed { color: rgba(241, 231, 220, .7); }
+.nav.is-scrolled .topbar { display: none; }
+
+/* ---------- hero: words + one big photo ---------- */
+.hero { padding-top: 140px; }
+.hero .wrap { grid-template-columns: 6fr 5fr; }
+.hero h1 { font-size: clamp(52px, 6.6vw, 104px); }
+.hero__photo { margin: 0; height: min(680px, 76vh); border-radius: 22px; overflow: hidden; background: var(--surface); }
+.hero__photo picture, .hero__photo img { display: block; width: 100%; height: 100%; }
+.hero__photo img { object-fit: cover; object-position: 50% 45%; }
+@media (max-width: 1023px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero__photo { height: 72vw; }
+}
+@media (max-width: 767px) {
+  .topbar__addr { display: none; }
+  .hero { padding-top: 112px; }
+  .hero h1 { font-size: clamp(42px, 13vw, 66px); }
+  .hero__photo { height: 96vw; border-radius: 14px; }
+}

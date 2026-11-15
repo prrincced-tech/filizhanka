@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..600&family=Manrope:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
@@ -64,6 +64,11 @@
 <div class="curtain" aria-hidden="true"><div class="glow"><svg class="neon" viewBox="-12 -12 144 124"><use href="#logo"/></svg></div></div>
 
 <header class="nav">
+  <div class="topbar"><div class="wrap topbar__row">
+    <span class="open-now" hidden><i></i><span></span></span>
+    <span class="topbar__addr">вул. Ярослава Мудрого, 11 · Біла Церква</span>
+    <a href="tel:+380508764055">050 876 40 55</a>
+  </div></div>
   <div class="wrap nav__bar">
     <a class="logo" href="#top" data-link><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg>Філіжанка</a>
     <nav class="nav__links" aria-label="Головне меню">
@@ -87,7 +92,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero__copy">
-        <p class="hero__where" data-hero><span class="open-now" hidden><i></i><span></span></span><span>Біла Церква, вул. Ярослава Мудрого, 11</span></p>
+        <p class="hero__where" data-hero>Кав'ярня в центрі Білої Церкви</p>
         <h1 aria-label="Філіжанка — почни день з філіжанки"><span class="split-line"><span data-hero-line>Почни день</span></span><span class="split-line"><span data-hero-line><em>з філіжанки</em></span></span></h1>
         <p class="hero__lead" data-hero>Кава, круасани й десерти. Щодня з 8:00, у вихідні з 9:00, до 21:00.</p>
         <div class="hero__actions" data-hero>
@@ -98,11 +103,12 @@
           <span class="rating__stars" aria-hidden="true"><i style="--f: 92%"></i></span><b>4,6</b><span>516 відгуків на Google</span>
         </a>
       </div>
-      <div class="hero__media">
-        <figure class="tile tile--a" data-hero-tile><img src="assets/ig/p05.jpg" alt="Зал кав'ярні з вікнами та рослинами" style="object-position: 50% 40%"></figure>
-        <figure class="tile tile--b" data-hero-tile><img src="assets/rl/tray-croissant.jpg" alt="Круасан і кава з собою" style="object-position: 50% 40%"></figure>
-        <figure class="tile tile--c" data-hero-tile><img src="assets/rl/iced-latte.jpg" alt="Айс-лате у фірмовому стаканчику" style="object-position: 50% 40%"></figure>
-      </div>
+      <figure class="hero__photo" data-hero-tile>
+        <picture>
+          <source media="(max-width: 1023px)" srcset="assets/ig/p05.jpg">
+          <img src="assets/rl/hero-tall.jpg" alt="Зал Філіжанки з плетеними лампами" fetchpriority="high">
+        </picture>
+      </figure>
     </div>
   </section>
 
@@ -270,6 +276,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="app.js?v=18"></script>
+<script src="app.js?v=19"></script>
 </body>
 </html>
