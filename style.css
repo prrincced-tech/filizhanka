@@ -464,3 +464,7 @@ html:not(.js) .loader { display: none; }
 }
 .item > span small { width: 0; white-space: nowrap; }
 .item__more { align-self: flex-start !important; }
+.hero__photo img { object-position: 50% 30%; }
+.story__ring { overflow: hidden; }
+.story__ring img { aspect-ratio: 1; min-height: 0; }
+@media (max-width: 1023px) { .hero__photo img { object-position: 50% 0%; } }
