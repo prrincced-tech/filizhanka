@@ -413,3 +413,13 @@ html:not(.js) .loader { display: none; }
   .fact span { font-size: 13px; }
   .footer { padding-bottom: 110px; }
 }
+
+/* ---------- wide screens: use the width instead of leaving empty margins ---------- */
+.wrap { max-width: 1600px; }
+.gallery__track { padding: 0 max(var(--pad), calc((100vw - 1600px) / 2 + var(--pad))); }
+@media (min-width: 1280px) {
+  .hero .wrap { grid-template-columns: 1fr 1fr; gap: clamp(48px, 5vw, 96px); }
+  .hero h1 { font-size: clamp(72px, 6.4vw, 124px); }
+  .hero__lead { font-size: 20px; max-width: 38ch; }
+  .hero__photo { height: min(820px, calc(100vh - 170px)); }
+}
