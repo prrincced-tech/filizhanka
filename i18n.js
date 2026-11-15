@@ -51,6 +51,8 @@
     'Еспресо, молоко і багато льоду. Збираємо на очах у прозорому стаканчику.': 'Espresso, milk and plenty of ice, made right in front of you.',
     'На двох': 'For two', 'Кава + макарун з собою': 'Coffee + macaron to go',
     'Беріть на двох: дві кави і пара макарунів у зручній таці.': 'Take it for two: two coffees and a pair of macarons in a handy tray.',
+    'Тепле': 'Warm', 'Ягідний чай з апельсином': 'Berry tea with orange',
+    'Ягоди, апельсин і гаряча вода — зігріває з першого ковтка.': 'Berries, orange and hot water: warming from the first sip.',
     'Солоденьке': 'Something sweet', 'щодня': 'every day',
     'Вітрина щодня наповнена смачненьким — заходьте за десертом до кави у будь-який день тижня.': 'Our display is full of treats every day. Drop in for a dessert with your coffee any day of the week.',
     'Меренговий рулет': 'Meringue roll', 'з фруктами': 'with fruit',

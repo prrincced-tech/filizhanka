@@ -506,3 +506,7 @@ html:not(.js) .loader { display: none; }
 html[lang="en"] .hero h1 { font-size: clamp(44px, 5.1vw, 88px); }
 @media (min-width: 768px) and (max-width: 1023px) { html[lang="en"] .hero h1 { font-size: clamp(48px, 7.6vw, 78px); } }
 @media (max-width: 767px) { html[lang="en"] .hero h1 { font-size: clamp(38px, 12.2vw, 68px); } }
+/* four "new" cards: 4 across on wide screens, 2 on tablets */
+.new__grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) { .new__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) { .new__grid { grid-template-columns: 1fr; } }
