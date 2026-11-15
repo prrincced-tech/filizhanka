@@ -160,7 +160,7 @@
   /* ---------- smooth scroll ---------- */
   let lenis = null;
   if (!reduce && window.Lenis) {
-    lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+    lenis = new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -234,24 +234,24 @@
 
   /* ---------- scroll reveals (once each) ---------- */
   $$('[data-split]').forEach(h => gsap.from($$('.split-line > span', h), { yPercent: 120, duration: 1.3, stagger: .08, ease: E,
-    scrollTrigger: { trigger: h, start: 'top 88%', once: true } }));
+    scrollTrigger: { trigger: h, start: 'top 92%', once: true } }));
   $$('[data-fade]').forEach(el => gsap.from(el, { y: 40, autoAlpha: 0, duration: 1.2, ease: E, scrollTrigger: { trigger: el, start: 'top 92%', once: true } }));
   /* calm motion: things rise a little and fade in as they come into view, once */
-  const soft = { ease: 'power2.out', duration: .9 };
+  const soft = { ease: 'power3.out', duration: 1.3 };
   $$('[data-reveal]').forEach(box => {
     const img = $('img', box);
-    gsap.timeline({ scrollTrigger: { trigger: box, start: 'top 88%', once: true } })
-      .from(box, { autoAlpha: 0, y: 30, ...soft })
-      .from(img, { scale: 1.08, duration: 1.6, ease: 'power2.out' }, 0);
+    gsap.timeline({ scrollTrigger: { trigger: box, start: 'top 92%', once: true } })
+      .from(box, { autoAlpha: 0, y: 24, ...soft })
+      .from(img, { scale: 1.06, duration: 2.2, ease: 'power2.out' }, 0);
   });
   $$('main h2').forEach(h => gsap.from(h, { autoAlpha: 0, y: 24, ...soft, scrollTrigger: { trigger: h, start: 'top 90%', once: true } }));
   $$('.picks__grid, .reviews__grid, .vitrina__grid').forEach(g => gsap.from(g.children, { autoAlpha: 0, y: 36, stagger: .1, ...soft,
-    scrollTrigger: { trigger: g, start: 'top 85%', once: true } }));
-  gsap.from('.about__text p', { autoAlpha: 0, y: 24, stagger: .1, ...soft, scrollTrigger: { trigger: '.about__text', start: 'top 85%', once: true } });
+    scrollTrigger: { trigger: g, start: 'top 90%', once: true } }));
+  gsap.from('.about__text p', { autoAlpha: 0, y: 24, stagger: .1, ...soft, scrollTrigger: { trigger: '.about__text', start: 'top 90%', once: true } });
   $$('.menu__col').forEach((c, i) => gsap.from($$('h3, .item', c), { autoAlpha: 0, y: 16, stagger: .05, ...soft, delay: i * .12,
-    scrollTrigger: { trigger: c, start: 'top 85%', once: true } }));
-  gsap.from('.story', { autoAlpha: 0, scale: .85, stagger: .06, duration: .6, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.stories', start: 'top 92%', once: true } });
-  gsap.from('.g-item', { autoAlpha: 0, x: 60, stagger: .06, ...soft, scrollTrigger: { trigger: '.gallery__scroller', start: 'top 85%', once: true } });
+    scrollTrigger: { trigger: c, start: 'top 90%', once: true } }));
+  gsap.from('.story', { autoAlpha: 0, y: 16, stagger: .07, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: '.stories', start: 'top 92%', once: true } });
+  gsap.from('.g-item', { autoAlpha: 0, x: 40, stagger: .08, ...soft, scrollTrigger: { trigger: '.gallery__scroller', start: 'top 90%', once: true } });
   gsap.from('.map__card', { autoAlpha: 0, y: 40, ...soft, clearProps: 'transform,opacity,visibility', scrollTrigger: { trigger: '.map', start: 'top 70%', once: true } });
   // the big photo on the first screen drifts in slowly after the intro
   const heroImg = $('.hero__photo img');
@@ -294,19 +294,13 @@
     e.preventDefault();
     const wasMenu = document.body.classList.contains('menu-open');
     if (reduce) { setMenu(false); jumpTo(href); return; }
-    if (busy) return;
-    busy = true;
     hidePreview();
-    lenis && lenis.stop();
-    gsap.timeline({ onComplete: () => { busy = false; } })
-      .set(curtain, { y: 0, yPercent: 100 })
-      .set(cGlow, { autoAlpha: 0, scale: .85 })
-      .to(curtain, { yPercent: 0, duration: .7, ease: E2 })
-      .to(cGlow, { autoAlpha: 1, scale: 1, duration: .35, ease: 'power2.out' }, '-=.2')
-      .add(() => { if (wasMenu) setMenu(false); lenis && lenis.start(); jumpTo(href); nav.classList.remove('is-hidden'); ScrollTrigger.update(); })
-      .to(cGlow, { keyframes: { opacity: [1, .3, 1, .6, 1] }, duration: .35, ease: 'none' })
-      .to(curtain, { yPercent: -100, duration: .8, ease: E2 })
-      .to(cGlow, { autoAlpha: 0, duration: .3 }, '<');
+    if (wasMenu) setMenu(false);
+    nav.classList.remove('is-hidden');
+    if (lenis) {
+      const el = href === '#top' ? null : $(href);
+      lenis.scrollTo(el || 0, { offset: el ? -70 : 0, duration: 1.6, easing: t => 1 - Math.pow(1 - t, 4) });
+    } else jumpTo(href);
   }));
 
   /* ---------- menu photo preview (hidden the moment the pointer is not on a row) ---------- */

@@ -468,3 +468,7 @@ html:not(.js) .loader { display: none; }
 .story__ring { overflow: hidden; }
 .story__ring img { aspect-ratio: 1; min-height: 0; }
 @media (max-width: 1023px) { .hero__photo img { object-position: 50% 0%; } }
+/* calmer hovers */
+.btn, .nav__ig, .arrow { transition: background .45s cubic-bezier(.22, 1, .36, 1), color .45s cubic-bezier(.22, 1, .36, 1), border-color .45s cubic-bezier(.22, 1, .36, 1), transform .45s cubic-bezier(.22, 1, .36, 1); }
+.pick__img img, .dessert__img img, .g-item img, .menu__pic img { transition: transform 1.2s cubic-bezier(.22, 1, .36, 1); }
+.footer a, .link, .nav a { transition: color .4s cubic-bezier(.22, 1, .36, 1); }
