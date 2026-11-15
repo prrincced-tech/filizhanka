@@ -20,9 +20,10 @@
   if (on) {
     on.hidden = false;
     const tomorrowWeekend = day === 5 || day === 6;
-    on.lastElementChild.textContent = min >= opens && min < closes ? 'Зараз відчинено · до 21:00'
+    const T = window.fzT || (x => x);
+    on.lastElementChild.textContent = T(min >= opens && min < closes ? 'Зараз відчинено · до 21:00'
       : min < opens ? `Сьогодні відчиняємось о ${day >= 6 ? '9:00' : '8:00'}`
-      : `Завтра відчиняємось о ${tomorrowWeekend ? '9:00' : '8:00'}`;
+      : `Завтра відчиняємось о ${tomorrowWeekend ? '9:00' : '8:00'}`);
   }
 
   /* ---------- mobile menu ---------- */
@@ -118,6 +119,19 @@
     it.addEventListener('keydown', e => { if (tapMode() && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggle(); } });
   });
 
+  /* ---------- share the site ---------- */
+  const toast = $('.toast');
+  const say = msg => { if (!toast) return; toast.textContent = msg; toast.classList.add('on'); clearTimeout(say.t); say.t = setTimeout(() => toast.classList.remove('on'), 2200); };
+  $$('[data-share]').forEach(b => b.addEventListener('click', async () => {
+    const url = 'https://prrincced-tech.github.io/filizhanka/';
+    const T = window.fzT || (x => x);
+    try {
+      if (navigator.share) { await navigator.share({ title: document.title, text: T('Філіжанка · Біла Церква'), url }); return; }
+      await navigator.clipboard.writeText(url);
+      say(T('Посилання скопійовано'));
+    } catch (e) { if (e && e.name !== 'AbortError') window.prompt('Copy:', url); }
+  }));
+
   /* ---------- map: asleep until clicked, asleep again once scrolled away ---------- */
   const map = $('.map');
   if (map) {
@@ -191,7 +205,9 @@
     heroIn();
     ScrollTrigger.refresh();
   };
-  if (loader && !reduce) {
+  let skipIntro = false;
+  try { skipIntro = sessionStorage.getItem('fz-skip-intro') === '1'; sessionStorage.removeItem('fz-skip-intro'); } catch (e) {}
+  if (loader && !reduce && !skipIntro) {
     const svg = $('.neon', loader), glow = $('.glow', loader), count = $('.loader__count', loader), n = { v: 0 };
     prepDraw(svg);
     const tl = gsap.timeline({ onComplete: () => loader.remove() });
