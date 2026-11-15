@@ -298,3 +298,10 @@ html:not(.js) .loader { display: none; }
   .hero h1 { font-size: clamp(42px, 13vw, 66px); }
   .hero__photo { height: 96vw; border-radius: 14px; }
 }
+
+/* ---------- loader in the site's light palette ---------- */
+.loader { background: var(--bg); color: var(--ink); }
+.loader .neon { color: var(--accent); }
+.loader .glow { filter: drop-shadow(0 0 6px rgba(142, 27, 43, .25)); }
+.loader__word { color: var(--ink); }
+.loader__count { color: rgba(42, 29, 26, .08); }
