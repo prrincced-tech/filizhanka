@@ -3,23 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Філіжанка — кав'ярня в серці Білої Церкви</title>
-<meta name="description" content="Кава, круасани, десерти та атмосфера міської кав'ярні на вулиці Ярослава Мудрого, 11. Щодня з 8:00 до 21:00, у вихідні з 9:00.">
-<meta property="og:title" content="Філіжанка — кав'ярня в серці Білої Церкви">
-<meta property="og:description" content="Кава, круасани й десерти на вулиці Ярослава Мудрого.">
+<title>Філіжанка — кав'ярня, Біла Церква</title>
+<meta name="description" content="Кав'ярня на Ярослава Мудрого, 11 у Білій Церкві. Кава, круасани, десерти. Щодня з 8:00 до 21:00, у вихідні з 9:00.">
+<meta property="og:title" content="Філіжанка — кав'ярня, Біла Церква">
+<meta property="og:description" content="Кава, круасани й десерти на Ярослава Мудрого, 11.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/rl/storefront.jpg">
-<meta name="theme-color" content="#0f0809">
+<meta name="theme-color" content="#f6f1ea">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=16">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..600&family=Manrope:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=17">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="is-loading">
 
-<!-- the neon sign of the cafe: a cup, its handle and the letter ф (padded viewBox so the glow is never cut) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo" viewBox="-12 -12 144 124" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 16 V76 Q14 88 26 88 H70 Q82 88 82 76 V16"/>
@@ -31,7 +30,7 @@
 
 <div class="loader" aria-hidden="true">
   <div class="loader__inner">
-    <div class="glow"><svg class="neon neon--draw" viewBox="-12 -12 144 124">
+    <div class="glow"><svg class="neon" viewBox="-12 -12 144 124">
       <path d="M14 16 V76 Q14 88 26 88 H70 Q82 88 82 76 V16"/>
       <path d="M82 30 H101 Q104 30 104 33 V61 Q104 64 101 64 H82"/>
       <rect x="32" y="32" width="32" height="28" rx="9"/>
@@ -39,169 +38,106 @@
     </svg></div>
     <div class="loader__word"><span>Ф</span><span>і</span><span>л</span><span>і</span><span>ж</span><span>а</span><span>н</span><span>к</span><span>а</span></div>
   </div>
-  <p class="label loader__city">Біла Церква</p>
   <div class="loader__count">0</div>
 </div>
 
 <div class="curtain" aria-hidden="true"><div class="glow"><svg class="neon" viewBox="-12 -12 144 124"><use href="#logo"/></svg></div></div>
-<div class="cursor" aria-hidden="true"><span>дивитись</span></div>
 
 <header class="nav">
   <div class="wrap nav__bar">
     <a class="logo" href="#top" data-link><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg>Філіжанка</a>
     <nav class="nav__links" aria-label="Головне меню">
-      <a href="#about" data-link>Про нас</a>
       <a href="#menu" data-link>Меню</a>
-      <a href="#vitrina" data-link>Вітрина</a>
-      <a href="#gallery" data-link>Атмосфера</a>
-      <a href="#visit" data-link>Контакти</a>
+      <a href="#vitrina" data-link>Десерти</a>
+      <a href="#gallery" data-link>Фото</a>
+      <a href="#map" data-link>Контакти</a>
     </nav>
-    <button class="lang" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
-    <a class="btn nav__cta" href="#visit" data-link>Завітати</a>
+    <a class="btn nav__cta" href="tel:+380508764055">050 876 40 55</a>
     <button class="nav__burger" type="button" aria-label="Відкрити меню" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Мобільне меню">
-  <a href="#about" data-link>Про <em>нас</em></a>
-  <a href="#menu" data-link><em>Меню</em></a>
-  <a href="#vitrina" data-link>Віт<em>рина</em></a>
-  <a href="#gallery" data-link>Атмо<em>сфера</em></a>
-  <a href="#visit" data-link><em>Контакти</em></a>
-  <button class="lang lang--menu" type="button" data-lang-toggle>English version</button>
+  <a href="#menu" data-link>Меню</a>
+  <a href="#vitrina" data-link>Десерти</a>
+  <a href="#gallery" data-link>Фото</a>
+  <a href="#map" data-link>Контакти</a>
 </nav>
 
 <main id="top">
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <div class="hero__copy">
-        <p class="label" data-hero>Філіжанка · Біла Церква</p>
+        <p class="hero__where" data-hero>Біла Церква, вул. Ярослава Мудрого, 11</p>
         <h1 aria-label="Філіжанка — почни день з філіжанки"><span class="split-line"><span data-hero-line>Почни день</span></span><span class="split-line"><span data-hero-line><em>з філіжанки</em></span></span></h1>
-        <p class="hero__lead" data-hero>Кав'ярня у серці Білої Церкви: готуємо каву, десерти та атмосферу міської кав'ярні.</p>
-        <div class="hero__stats" data-hero>
-          <div class="stat"><b>8:00–21:00</b><small>Пн–Пт</small></div>
-          <div class="stat"><b>9:00–21:00</b><small>Сб–Нд</small></div>
-        </div>
+        <p class="hero__lead" data-hero>Кава, круасани й десерти. Щодня з 8:00, у вихідні з 9:00, до 21:00.</p>
         <div class="hero__actions" data-hero>
-          <a class="btn btn--solid" href="#menu" data-link>Дивитись меню <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+          <a class="btn btn--solid" href="#menu" data-link>Меню</a>
           <a class="btn" href="#map" data-link>Як дійти</a>
         </div>
         <a class="rating" href="https://maps.google.com/?cid=10240009255878699770" target="_blank" rel="noopener" data-hero>
-          <span class="rating__stars" aria-hidden="true"><i style="--f: 92%"></i></span>
-          <b>4,6</b><span>516 відгуків на Google</span>
+          <span class="rating__stars" aria-hidden="true"><i style="--f: 92%"></i></span><b>4,6</b><span>516 відгуків на Google</span>
         </a>
       </div>
       <div class="hero__media">
-        <figure class="tile tile--a" data-hero-tile data-view><img src="assets/ig/p05.jpg" alt="Зал кав'ярні з великими вікнами та рослинами" style="object-position: 50% 40%"></figure>
-        <figure class="tile tile--b" data-hero-tile data-view><img style="object-position: 50% 40%" src="assets/rl/tray-croissant.jpg" alt="Круасан і кава з собою на таці Філіжанки"></figure>
-        <figure class="tile tile--c" data-hero-tile data-view><img style="object-position: 50% 40%" src="assets/rl/iced-latte.jpg" alt="Айс-лате серед фірмових стаканчиків Філіжанки"></figure>
-        <div class="hero__card" data-hero-card>
-          <div class="glow"><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg></div>
-          <div><p class="label">Серце міста</p><b>Ярослава Мудрого, 11</b></div>
-        </div>
+        <figure class="tile tile--a" data-hero-tile><img src="assets/ig/p05.jpg" alt="Зал кав'ярні з вікнами та рослинами" style="object-position: 50% 40%"></figure>
+        <figure class="tile tile--b" data-hero-tile><img src="assets/rl/tray-croissant.jpg" alt="Круасан і кава з собою" style="object-position: 50% 40%"></figure>
+        <figure class="tile tile--c" data-hero-tile><img src="assets/rl/iced-latte.jpg" alt="Айс-лате у фірмовому стаканчику" style="object-position: 50% 40%"></figure>
       </div>
     </div>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span><b>Кава</b><i></i>Круасани<i></i><b>Десерти</b><i></i>Холодні напої<i></i><b>Атмосфера</b><i></i>Кава з собою<i></i></span>
-      <span><b>Кава</b><i></i>Круасани<i></i><b>Десерти</b><i></i>Холодні напої<i></i><b>Атмосфера</b><i></i>Кава з собою<i></i></span>
-    </div>
-  </div>
-
-  <!-- HIGHLIGHTS (like the stories on Instagram) -->
-  <section class="stories" aria-label="Що в нас є">
+  <section class="stories" aria-label="Хайлайти">
     <div class="wrap stories__row">
       <a class="story" href="#menu" data-link><span class="story__ring"><img src="assets/ig/hl-croissants.jpg" alt=""></span><span>Круасани</span></a>
       <a class="story" href="#menu" data-link><span class="story__ring"><img src="assets/ig/hl-cold.jpg" alt=""></span><span>Холодні напої</span></a>
       <a class="story" href="#vitrina" data-link><span class="story__ring"><img src="assets/ig/hl-desserts.jpg" alt=""></span><span>Десерти</span></a>
-      <a class="story" href="#cups" data-link><span class="story__ring"><img src="assets/ig/hl-cups.jpg" alt=""></span><span>Чашки</span></a>
+      <a class="story" href="#gallery" data-link><span class="story__ring"><img src="assets/ig/hl-cups.jpg" alt=""></span><span>Чашки</span></a>
       <a class="story" href="#gallery" data-link><span class="story__ring"><img src="assets/ig/hl-guests.jpg" alt=""></span><span>Гості</span></a>
-      <a class="story" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener"><span class="story__ring story__ring--logo"><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg></span><span>@filizhanka.bc</span></a>
+      <a class="story" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener"><span class="story__ring story__ring--logo"><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg></span><span>Instagram</span></a>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="section about" id="about">
     <div class="wrap">
       <div class="about__text">
-        <p class="label" data-fade>Про нас</p>
-        <h2 data-split>Кава у серці <em>міста</em></h2>
-        <p class="big" data-fade>Філіжанка — міська кав'ярня на Ярослава Мудрого, куди заходять на еспресо дорогою на роботу й повертаються по десерт увечері.</p>
-        <p data-fade>Готуємо класичну каву й холодні напої, щоранку викладаємо свіжі круасани, а каву з собою пакуємо в крафт — разом із чимось солоденьким.</p>
-        <div class="tags" data-fade><span>Еспресо</span><span>Круасани</span><span>Макарони</span><span>Холодні напої</span><span>Кава з собою</span></div>
+        <h2>Про нас</h2>
+        <p class="big">Філіжанка — міська кав'ярня в центрі Білої Церкви. Готуємо каву, десерти та атмосферу.</p>
+        <p>Зранку — свіжі круасани, вдень — холодні напої, увечері — десерт до кави. Каву з собою наливаємо у фірмовий стаканчик.</p>
       </div>
       <div class="about__side">
-        <figure class="reveal-img about__photo about__photo--a" data-reveal data-view><img src="assets/ig/p06.jpg" alt="Гості з кавою за столиком біля вікна" loading="lazy" style="object-position: 75% 50%"></figure>
-        <figure class="reveal-img about__photo about__photo--b" data-reveal data-view><img style="object-position: 50% 50%" src="assets/rl/window-girl.jpg" alt="Гостя з чашкою біля вікна в залі" loading="lazy"></figure>
+        <figure class="reveal-img about__photo" data-reveal><img src="assets/ig/p06.jpg" alt="Гості з кавою біля вікна" loading="lazy" style="object-position: 75% 50%"></figure>
+        <figure class="reveal-img about__photo about__photo--b" data-reveal><img src="assets/rl/window-girl.jpg" alt="Гостя з чашкою в залі" loading="lazy"></figure>
       </div>
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section class="section why" id="why">
-    <div class="wrap">
-      <div class="why__head">
-        <p class="label" data-fade>Чому до нас</p>
-        <h2 data-split>Маленькі причини <em>зайти</em></h2>
-      </div>
-      <div class="why__grid">
-        <article class="why__item" data-fade>
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29s-9-8.4-9-15a9 9 0 0 1 18 0c0 6.6-9 15-9 15z"/><circle cx="16" cy="14" r="3.2"/></svg>
-          <h3>У серці міста</h3><p>Ярослава Мудрого, 11 — по дорозі на роботу, з прогулянки чи на зустріч.</p>
-        </article>
-        <article class="why__item" data-fade>
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><path d="M16 9v7l4.5 3"/></svg>
-          <h3>Щодня з 8:00</h3><p>У будні з 8:00, у вихідні з 9:00 і до 21:00 — на ранкову каву і вечірній десерт.</p>
-        </article>
-        <article class="why__item" data-fade>
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11h14l-1.6 16.5a1.5 1.5 0 0 1-1.5 1.5h-7.8a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M8 7h16v4H8z"/><path d="M12 17h8"/></svg>
-          <h3>Кава з собою</h3><p>У фірмовому стаканчику і крафтовому пакеті — разом із круасаном чи макаруном.</p>
-        </article>
-        <article class="why__item" data-fade>
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c2-7 7-11 12-11s10 4 12 11c-3 2-7 3-12 3s-9-1-12-3z"/><path d="M11 11.5 13 22M21 11.5 19 22M16 9v14"/></svg>
-          <h3>Свіжі круасани</h3><p>Щоранку — класичні й з начинками: сьомга, шинка, капрезе, банан з нутелою.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- MENU -->
   <section class="section menu" id="menu">
-    <div class="menu__glow" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="menu__head">
-        <div>
-          <p class="label" data-fade>Меню</p>
-          <h2 data-split>Що у <em>філіжанці</em></h2>
-        </div>
-        <p data-fade>Наведіть на позицію — покажемо, як вона виглядає. Новинки й сезонні напої шукайте в нашому Instagram.</p>
-      </div>
-      <div class="menu__grid" data-fade>
+      <h2>Меню</h2>
+      <div class="menu__grid">
         <div class="menu__col">
-          <h3>Кава <small>01</small></h3>
+          <h3>Кава</h3>
           <div class="item" data-img="0"><span>Еспресо<small>30 мл</small></span><b>45 ₴</b></div>
           <div class="item" data-img="1"><span>Американо<small>200 мл</small></span><b>50 ₴</b></div>
           <div class="item" data-img="2"><span>Капучино<small>250 мл</small></span><b>65 ₴</b></div>
           <div class="item" data-img="3"><span>Лате<small>350 мл</small></span><b>70 ₴</b></div>
-          <div class="item" data-img="4"><span>Раф<small>вершковий, з собою у фірмовому стаканчику</small></span><b>85 ₴</b></div>
+          <div class="item" data-img="4"><span>Раф<small>вершковий</small></span><b>85 ₴</b></div>
         </div>
         <div class="menu__col">
-          <h3>Холодні напої <small>02</small></h3>
+          <h3>Холодні напої</h3>
           <div class="item" data-img="5"><span>Холодна матча<small>на молоці, з льодом</small></span><b>95 ₴</b></div>
-          <div class="item" data-img="6"><span>Лимонад<small>з апельсином і м'ятою</small></span><b>75 ₴</b></div>
-          <div class="item" data-img="7"><span>Еспресо-тонік<small>еспресо на тоніку з льодом</small></span><b>85 ₴</b></div>
+          <div class="item" data-img="6"><span>Лимонад<small>апельсин і м'ята</small></span><b>75 ₴</b></div>
+          <div class="item" data-img="7"><span>Еспресо-тонік</span><b>85 ₴</b></div>
           <div class="item" data-img="8"><span>Джміль<small>фреш і еспресо</small></span><b>90 ₴</b></div>
           <div class="item" data-img="9"><span>Ягідне мохіто<small>безалкогольне</small></span><b>85 ₴</b></div>
         </div>
         <div class="menu__col">
-          <h3>Круасани <small>03</small></h3>
-          <div class="item" data-img="10"><span>З ніжною сьомгою<small>солоний</small></span><b>145 ₴</b></div>
-          <div class="item" data-img="11"><span>З ароматною шинкою<small>солоний</small></span><b>115 ₴</b></div>
-          <div class="item" data-img="12"><span>Капрезе<small>томати й моцарела</small></span><b>110 ₴</b></div>
-          <div class="item" data-img="13"><span>З апельсиновим джемом<small>солодкий</small></span><b>75 ₴</b></div>
-          <div class="item" data-img="14"><span>Банан з нутелою<small>солодкий хіт</small></span><b>90 ₴</b></div>
+          <h3>Круасани</h3>
+          <div class="item" data-img="10"><span>Зі сьомгою</span><b>145 ₴</b></div>
+          <div class="item" data-img="11"><span>З шинкою</span><b>115 ₴</b></div>
+          <div class="item" data-img="12"><span>Капрезе</span><b>110 ₴</b></div>
+          <div class="item" data-img="13"><span>З апельсиновим джемом</span><b>75 ₴</b></div>
+          <div class="item" data-img="14"><span>Банан і нутела</span><b>90 ₴</b></div>
         </div>
       </div>
     </div>
@@ -224,109 +160,41 @@
     </div>
   </section>
 
-  <!-- NEW -->
-  <section class="section new" id="new">
-    <div class="wrap">
-      <div class="new__head">
-        <div>
-          <p class="label" data-fade>Новинки</p>
-          <h2 data-split>Зараз <em>смакуємо</em></h2>
-        </div>
-        <a class="btn" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-fade>Більше новинок в Instagram <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
-      </div>
-      <div class="new__grid">
-        <article class="new__card" data-fade>
-          <div class="new__img" data-view><img src="assets/rl/new-cocoa.jpg" alt="Какао з маршмелоу" loading="lazy"><span class="new__tag">Сезонне</span></div>
-          <h3>Какао з маршмелоу</h3><p>Густе, тепле і з горою маршмелоу — для холодних вечорів.</p>
-        </article>
-        <article class="new__card" data-fade>
-          <div class="new__img" data-view><img src="assets/rl/new-iced.jpg" alt="Айс-лате у фірмовому стаканчику" loading="lazy"><span class="new__tag">Хіт</span></div>
-          <h3>Айс-лате</h3><p>Еспресо, молоко і багато льоду. Збираємо на очах у прозорому стаканчику.</p>
-        </article>
-        <article class="new__card" data-fade>
-          <div class="new__img" data-view><img src="assets/rl/new-tray.jpg" alt="Дві кави та макаруни на таці з собою" loading="lazy"><span class="new__tag">На двох</span></div>
-          <h3>Кава + макарун з собою</h3><p>Беріть на двох: дві кави і пара макарунів у зручній таці.</p>
-        </article>
-        <article class="new__card" data-fade>
-          <div class="new__img" data-view><img src="assets/rl/berry-tea.jpg" alt="Ягідний чай з апельсином" loading="lazy"><span class="new__tag">Тепле</span></div>
-          <h3>Ягідний чай з апельсином</h3><p>Ягоди, апельсин і гаряча вода — зігріває з першого ковтка.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- VITRINA: desserts on the counter, real prices from the shop's own chalk labels -->
   <section class="section vitrina" id="vitrina">
     <div class="wrap">
-      <div class="vitrina__head">
-        <div>
-          <p class="label" data-fade>Вітрина</p>
-          <h2 data-split>Солоденьке <em>щодня</em></h2>
-        </div>
-        <p data-fade>Вітрина щодня наповнена смачненьким — заходьте за десертом до кави у будь-який день тижня.</p>
-      </div>
+      <h2>Десерти на вітрині</h2>
       <div class="vitrina__grid">
-        <figure class="dessert dessert--big reveal-img" data-reveal data-view><img src="assets/hl/vitrina.jpg" alt="Вітрина Філіжанки з десертами" loading="lazy"></figure>
-        <article class="dessert" data-fade><div class="dessert__img" data-view><img src="assets/hl/meringue.jpg" alt="Меренговий рулет з фруктами" loading="lazy"></div><h3>Меренговий рулет</h3><p><span>з фруктами</span><b>96 ₴</b></p></article>
-        <article class="dessert" data-fade><div class="dessert__img" data-view><img src="assets/hl/mochi.jpg" alt="Різнокольорові моті" loading="lazy"></div><h3>Моті</h3><p><span>різні смаки</span><b>75 ₴</b></p></article>
-        <article class="dessert" data-fade><div class="dessert__img" data-view><img src="assets/rl/macaron-melt.jpg" alt="Макарун у чашці капучино" loading="lazy"></div><h3>Макарун</h3><p><span>фундук-карамель</span><b>на вітрині</b></p></article>
-        <article class="dessert" data-fade><div class="dessert__img" data-view><img src="assets/hl/napoleon.jpg" alt="Наполеон" loading="lazy"></div><h3>Наполеон</h3><p><span>свіжий та ніжний</span><b>на вітрині</b></p></article>
+        <figure class="dessert dessert--big reveal-img" data-reveal><img src="assets/hl/vitrina.jpg" alt="Вітрина з десертами" loading="lazy"></figure>
+        <article class="dessert"><div class="dessert__img"><img src="assets/hl/meringue.jpg" alt="Меренговий рулет" loading="lazy"></div><h3>Меренговий рулет</h3><p>96 ₴</p></article>
+        <article class="dessert"><div class="dessert__img"><img src="assets/hl/mochi.jpg" alt="Моті" loading="lazy"></div><h3>Моті</h3><p>75 ₴</p></article>
+        <article class="dessert"><div class="dessert__img"><img src="assets/rl/macaron-melt.jpg" alt="Макарун" loading="lazy"></div><h3>Макарун</h3><p>фундук-карамель</p></article>
+        <article class="dessert"><div class="dessert__img"><img src="assets/hl/napoleon.jpg" alt="Наполеон" loading="lazy"></div><h3>Наполеон</h3><p>свіжий щодня</p></article>
       </div>
     </div>
   </section>
 
-  <!-- CUPS -->
-  <section class="section cups" id="cups">
-    <div class="wrap">
-      <div class="cups__photos">
-        <figure class="reveal-img cups__a" data-reveal data-view><img src="assets/hl/mugs.jpg" alt="Чашки з кумедними їжачками" loading="lazy"></figure>
-        <figure class="reveal-img cups__b" data-reveal data-view><img src="assets/hl/mug.jpg" alt="Чашка з їжачком" loading="lazy"></figure>
-      </div>
-      <div class="cups__text">
-        <p class="label" data-fade>Чашки</p>
-        <h2 data-split>Їжачки, які <em>зігріють</em></h2>
-        <p class="big" data-fade>Нові кумедні чашки вже чекають на тебе у Філіжанці. Попереджаємо: вони такі круті, що вибір буде непростим.</p>
-        <p data-fade>Ідеальний подарунок для найрідніших — забирайте разом із кавою.</p>
-        <a class="btn" href="#visit" data-link data-fade>Обрати в кав'ярні <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
   <section class="section gallery" id="gallery">
     <div class="wrap gallery__head">
-      <div>
-        <p class="label" data-fade>Атмосфера</p>
-        <h2 data-split>Як у нас <em>смакує</em></h2>
-      </div>
-      <div class="gallery__ctrl" data-fade>
+      <h2>Фото</h2>
+      <div class="gallery__ctrl">
         <button class="arrow" type="button" data-dir="-1" aria-label="Попередні фото"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7H1M6 2 1 7l5 5"/></svg></button>
         <button class="arrow" type="button" data-dir="1" aria-label="Наступні фото"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></button>
       </div>
     </div>
     <div class="gallery__scroller" tabindex="0" aria-label="Фото з кав'ярні, гортайте вбік">
       <div class="gallery__track">
-        <figure class="g-item" data-view><img src="assets/rl/macaron-dip.jpg" alt="Макарун над чашкою капучино" loading="lazy"></figure>
-        <figure class="g-item" data-view><img src="assets/rl/tulip-pour.jpg" alt="Холодний напій з апельсином і тюльпанами" loading="lazy"></figure>
-        <figure class="g-item" data-view><img src="assets/rl/lamps.jpg" alt="Зал з плетеними лампами" loading="lazy"></figure>
-        <figure class="g-item g-item--hl" data-view><img src="assets/rl/cocoa.jpg" alt="Какао з маршмелоу" loading="lazy"></figure>
-        <figure class="g-item" data-view><img src="assets/rl/tray-desserts.jpg" alt="Кава й десерти з собою" loading="lazy"></figure>
-        <figure class="g-item g-item--sq" data-view><img src="assets/ig/p10.jpg" alt="Бариста за стійкою" loading="lazy" style="object-position: 50% 100%"></figure>
-        <figure class="g-item g-item--sq" data-view><img src="assets/ig/p07.jpg" alt="Бариста за стійкою" loading="lazy" style="object-position: 50% 100%"></figure>
-        <figure class="g-item" data-view><img src="assets/ig/p02.jpg" alt="Круасан і кава з собою" loading="lazy"></figure>
-        <div class="g-quote"><p>Філіжанка — це маленька чашка. А ще привід зупинитися посеред дня.</p><span class="label">Біла Церква</span></div>
-        <figure class="g-item" data-view><img src="assets/ig/p05.jpg" alt="Зал з рослинами" loading="lazy"></figure>
-        <figure class="g-item g-item--hl" data-view><img src="assets/rl/sun-dessert.jpg" alt="Десерт і кава на сонячному столику" loading="lazy"></figure>
-        <figure class="g-item g-item--sq" data-view><img src="assets/ig/p01.jpg" alt="Молоко вливають у капучино в червоній чашці" loading="lazy" style="object-position: 50% 0%"></figure>
-        <figure class="g-item" data-view><img src="assets/ig/p08.jpg" alt="Макарони" loading="lazy"></figure>
-        <figure class="g-item" data-view><img src="assets/rl/orange-tea.jpg" alt="Чай з апельсином у скляній чашці" loading="lazy"></figure>
-        <figure class="g-item" data-view><img src="assets/rl/tray-macarons.jpg" alt="Макарони й кава на таці" loading="lazy"></figure>
-        <figure class="g-item g-item--sq" data-view><img src="assets/ig/p09.jpg" alt="Бариста біля вікна" loading="lazy" style="object-position: 50% 100%"></figure>
-        <figure class="g-item" data-view><img src="assets/ig/p03.jpg" alt="Гостя з чашкою кави" loading="lazy"></figure>
-        <figure class="g-item" data-view><img src="assets/rl/latte-pour.jpg" alt="Айс-лате готують на очах" loading="lazy"></figure>
-        <figure class="g-item g-item--sq" data-view><img src="assets/ig/p12.jpg" alt="Гостя на лавці біля кав'ярні" loading="lazy" style="object-position: 50% 100%"></figure>
-        <figure class="g-item" data-view><img src="assets/ig/p06.jpg" alt="Гості за столиком" loading="lazy"></figure>
-        <figure class="g-item g-item--sq" data-view><img src="assets/ig/p11.jpg" alt="Прогулянка з кавою містом" loading="lazy" style="object-position: 50% 0%"></figure>
+        <figure class="g-item"><img src="assets/rl/lamps.jpg" alt="Зал з плетеними лампами" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/macaron-dip.jpg" alt="Макарун над чашкою капучино" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/cocoa.jpg" alt="Какао з маршмелоу" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/tray-desserts.jpg" alt="Кава й десерти з собою" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/tulip-pour.jpg" alt="Холодний напій з апельсином" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/sun-dessert.jpg" alt="Десерт на сонячному столику" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/berry-tea.jpg" alt="Ягідний чай" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/ig/p08.jpg" alt="Макаруни" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/tray-macarons.jpg" alt="Кава й макаруни на таці" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/rl/orange-tea.jpg" alt="Чай з апельсином" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/hl/mugs.jpg" alt="Чашки з їжачками" loading="lazy"></figure>
+        <figure class="g-item"><img src="assets/ig/p02.jpg" alt="Круасан і кава з собою" loading="lazy"></figure>
       </div>
     </div>
     <div class="wrap">
@@ -334,71 +202,20 @@
     </div>
   </section>
 
-  <!-- VISIT -->
-  <section class="section visit" id="visit">
-    <div class="wrap">
-      <figure class="visit__photo reveal-img" data-reveal data-view><img style="object-position: 40% 50%" src="assets/rl/storefront.jpg" alt="Фасад кав'ярні Філіжанка на Ярослава Мудрого" loading="lazy"></figure>
-      <div class="visit__info">
-        <p class="open-now" hidden><i></i><span></span></p>
-        <h2 data-split>Заходьте <em>на каву</em></h2>
-        <a class="visit__addr" data-fade href="https://www.google.com/maps/search/?api=1&amp;query=%D0%B2%D1%83%D0%BB.%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9C%D1%83%D0%B4%D1%80%D0%BE%D0%B3%D0%BE%2C%2011%2C%20%D0%91%D1%96%D0%BB%D0%B0%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">вул. Ярослава Мудрого, 11, Біла Церква</a>
-        <div class="panel" data-fade>
-          <div class="panel__row" data-days="1-5"><span>Понеділок — п'ятниця</span><b>8:00 — 21:00</b></div>
-          <div class="panel__row" data-days="6-7"><span>Субота — неділя</span><b>9:00 — 21:00</b></div>
-          <div class="panel__row"><span>Телефон</span><b><a href="tel:+380508764055">050 876 40 55</a></b></div>
-          <div class="panel__row"><span>Instagram</span><b><a href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener">@filizhanka.bc</a></b></div>
-        </div>
-        <div class="visit__actions" data-fade>
-          <a class="btn btn--solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=%D0%B2%D1%83%D0%BB.%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9C%D1%83%D0%B4%D1%80%D0%BE%D0%B3%D0%BE%2C%2011%2C%20%D0%91%D1%96%D0%BB%D0%B0%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Прокласти маршрут <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
-          <a class="btn btn--icon" href="tel:+380508764055"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5.6 1.8 3.4 2.3c-.8.2-1.3 1-1.1 1.8 1.2 4.9 5 8.7 9.9 9.9.8.2 1.6-.3 1.8-1.1l.5-2.2-3-1.5-1.4 1.5C8 9.9 6.1 8 5.3 6.4l1.5-1.4z"/></svg>Подзвонити</a>
-          <a class="btn btn--icon" href="https://ig.me/m/filizhanka.bc" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.8" y="1.8" width="12.4" height="12.4" rx="3.6"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.8" cy="4.2" r=".5" fill="currentColor"/></svg>Написати в Instagram</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <section class="section insta" id="insta">
-    <div class="wrap">
-      <div class="insta__head">
-        <div>
-          <p class="label" data-fade>Instagram</p>
-          <h2 data-split><em>@filizhanka.bc</em></h2>
-        </div>
-        <a class="btn btn--solid btn--icon" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-fade><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.8" y="1.8" width="12.4" height="12.4" rx="3.6"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.8" cy="4.2" r=".5" fill="currentColor"/></svg>Підписатися</a>
-      </div>
-      <div class="insta__grid">
-        <a class="insta__tile" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-view aria-label="Відкрити Instagram Філіжанки"><img src="assets/rl/ig-1.jpg" alt="" loading="lazy"></a>
-        <a class="insta__tile" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-view aria-label="Відкрити Instagram Філіжанки"><img src="assets/rl/ig-2.jpg" alt="" loading="lazy"></a>
-        <a class="insta__tile" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-view aria-label="Відкрити Instagram Філіжанки"><img src="assets/rl/ig-3.jpg" alt="" loading="lazy"></a>
-        <a class="insta__tile" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-view aria-label="Відкрити Instagram Філіжанки"><img src="assets/rl/ig-4.jpg" alt="" loading="lazy"></a>
-        <a class="insta__tile" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-view aria-label="Відкрити Instagram Філіжанки"><img src="assets/rl/ig-5.jpg" alt="" loading="lazy"></a>
-        <a class="insta__tile" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener" data-view aria-label="Відкрити Instagram Філіжанки"><img src="assets/rl/ig-6.jpg" alt="" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAP: a dark, wine-tinted Google map across the screen; it wakes up on click so it never steals the page scroll -->
-  <section class="map" id="map" aria-label="Карта: як дійти до Філіжанки">
-    <iframe class="map__frame" title="Філіжанка на карті, вул. Ярослава Мудрого, 11" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+  <section class="map" id="map" aria-label="Як нас знайти">
+    <iframe class="map__frame" title="Філіжанка на карті" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
       src="https://maps.google.com/maps?q=%D0%A4%D1%96%D0%BB%D1%96%D0%B6%D0%B0%D0%BD%D0%BA%D0%B0%2C%20%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9C%D1%83%D0%B4%D1%80%D0%BE%D0%B3%D0%BE%2C%2011%2C%20%D0%91%D1%96%D0%BB%D0%B0%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D0%B0&amp;z=17&amp;hl=uk&amp;output=embed"></iframe>
-    <div class="map__tint" aria-hidden="true"></div>
-    <div class="map__pin" aria-hidden="true">
-      <span class="map__pulse"></span><span class="map__pulse map__pulse--2"></span>
-      <div class="glow"><svg class="neon" viewBox="-12 -12 144 124"><use href="#logo"/></svg></div>
-    </div>
-    <button class="map__unlock" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 1v14M1 8h14M8 1 5.5 3.5M8 1l2.5 2.5M8 15l-2.5-2.5M8 15l2.5-2.5M1 8l2.5-2.5M1 8l2.5 2.5M15 8l-2.5-2.5M15 8l-2.5 2.5"/></svg>Натисніть, щоб рухати карту</button>
+    <button class="map__unlock" type="button">Натисніть, щоб рухати карту</button>
     <div class="wrap map__wrap">
-      <div class="map__card" data-fade>
-        <p class="label">Ми тут</p>
-        <h3>Філіжанка</h3>
-        <p class="map__addr">вул. Ярослава Мудрого, 11<br>центр, Біла Церква</p>
-        <a class="map__rating" href="https://maps.google.com/?cid=10240009255878699770" target="_blank" rel="noopener"><span class="rating__stars" aria-hidden="true"><i style="--f: 92%"></i></span><b>4,6</b> · 516 відгуків · <u>залишити відгук</u></a>
+      <div class="map__card">
+        <h2>Як нас знайти</h2>
+        <p class="open-now" hidden><i></i><span></span></p>
+        <p class="map__addr">вул. Ярослава Мудрого, 11<br>Біла Церква, центр</p>
         <div class="map__hours"><span>Пн–Пт <b>8:00–21:00</b></span><span>Сб–Нд <b>9:00–21:00</b></span></div>
-        <a class="btn btn--solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=%D0%B2%D1%83%D0%BB.%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9C%D1%83%D0%B4%D1%80%D0%BE%D0%B3%D0%BE%2C%2011%2C%20%D0%91%D1%96%D0%BB%D0%B0%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Прокласти маршрут <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+        <a class="btn btn--solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=%D0%B2%D1%83%D0%BB.%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9C%D1%83%D0%B4%D1%80%D0%BE%D0%B3%D0%BE%2C%2011%2C%20%D0%91%D1%96%D0%BB%D0%B0%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Прокласти маршрут</a>
         <div class="map__contact">
-          <a class="btn btn--icon" href="tel:+380508764055"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5.6 1.8 3.4 2.3c-.8.2-1.3 1-1.1 1.8 1.2 4.9 5 8.7 9.9 9.9.8.2 1.6-.3 1.8-1.1l.5-2.2-3-1.5-1.4 1.5C8 9.9 6.1 8 5.3 6.4l1.5-1.4z"/></svg>Подзвонити</a>
-          <a class="btn btn--icon" href="https://ig.me/m/filizhanka.bc" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.8" y="1.8" width="12.4" height="12.4" rx="3.6"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.8" cy="4.2" r=".5" fill="currentColor"/></svg>Написати</a>
+          <a class="btn" href="tel:+380508764055">Подзвонити</a>
+          <a class="btn" href="https://ig.me/m/filizhanka.bc" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
     </div>
@@ -406,36 +223,18 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer__top">
-      <a class="logo" href="#top" data-link><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg>Філіжанка</a>
-      <div class="footer__cols">
-        <div><h4>Сайт</h4><a class="ul" href="#about" data-link>Про нас</a><a class="ul" href="#menu" data-link>Меню</a><a class="ul" href="#vitrina" data-link>Вітрина</a><a class="ul" href="#cups" data-link>Чашки</a><a class="ul" href="#gallery" data-link>Атмосфера</a></div>
-        <div><h4>Кав'ярня</h4><a class="ul" href="tel:+380508764055">050 876 40 55</a><a class="ul" href="#map" data-link>Ярослава Мудрого, 11</a><a class="ul" href="#visit" data-link>Щодня з 8:00</a></div>
-        <div><h4>Соцмережі</h4><a class="ul" href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener">Instagram</a><a class="ul" href="https://ig.me/m/filizhanka.bc" target="_blank" rel="noopener">Написати в Direct</a></div>
-      </div>
-    </div>
-    <div class="footer__sign"><div class="glow"><svg class="neon neon--draw" viewBox="-12 -12 144 124" aria-hidden="true">
-      <path d="M14 16 V76 Q14 88 26 88 H70 Q82 88 82 76 V16"/>
-      <path d="M82 30 H101 Q104 30 104 33 V61 Q104 64 101 64 H82"/>
-      <rect x="32" y="32" width="32" height="28" rx="9"/>
-      <path d="M48 6 V80"/>
-    </svg></div></div>
-    <div class="footer__share"><button class="btn btn--icon" type="button" data-share><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="3.5" r="2"/><circle cx="4" cy="8" r="2"/><circle cx="12" cy="12.5" r="2"/><path d="M5.8 7 10.2 4.5M5.8 9l4.4 2.5"/></svg>Поділитися сайтом</button><a class="btn btn--icon" href="https://t.me/share/url?url=https%3A%2F%2Fprrincced-tech.github.io%2Ffilizhanka%2F&amp;text=%D0%A4%D1%96%D0%BB%D1%96%D0%B6%D0%B0%D0%BD%D0%BA%D0%B0%20%E2%80%94%20%D0%BA%D0%B0%D0%B2%27%D1%8F%D1%80%D0%BD%D1%8F%20%D0%B2%20%D0%91%D1%96%D0%BB%D1%96%D0%B9%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D1%96" target="_blank" rel="noopener">Telegram</a><a class="btn btn--icon" href="viber://forward?text=https%3A%2F%2Fprrincced-tech.github.io%2Ffilizhanka%2F">Viber</a></div>
-    <p class="footer__big" aria-hidden="true">Філіжанка</p>
-    <div class="footer__legal">
-      <span>© 2026 Філіжанка · Біла Церква</span>
-    </div>
+  <div class="wrap footer__row">
+    <a class="logo" href="#top" data-link><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg>Філіжанка</a>
+    <p>вул. Ярослава Мудрого, 11, Біла Церква · <a href="tel:+380508764055">050 876 40 55</a> · <a href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener">@filizhanka.bc</a></p>
+    <p class="footer__copy">© 2026 Філіжанка</p>
   </div>
 </footer>
 
-<div class="toast" role="status" aria-live="polite"></div>
-<div class="mbar"><a class="btn btn--solid btn--icon" href="tel:+380508764055"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5.6 1.8 3.4 2.3c-.8.2-1.3 1-1.1 1.8 1.2 4.9 5 8.7 9.9 9.9.8.2 1.6-.3 1.8-1.1l.5-2.2-3-1.5-1.4 1.5C8 9.9 6.1 8 5.3 6.4l1.5-1.4z"/></svg>Подзвонити</a><a class="btn btn--icon mbar__ig" href="https://ig.me/m/filizhanka.bc" target="_blank" rel="noopener" aria-label="Написати в Instagram"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.8" y="1.8" width="12.4" height="12.4" rx="3.6"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.8" cy="4.2" r=".5" fill="currentColor"/></svg>Direct</a></div>
+<div class="mbar"><a class="btn btn--solid" href="tel:+380508764055">Подзвонити</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=%D0%B2%D1%83%D0%BB.%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9C%D1%83%D0%B4%D1%80%D0%BE%D0%B3%D0%BE%2C%2011%2C%20%D0%91%D1%96%D0%BB%D0%B0%20%D0%A6%D0%B5%D1%80%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Маршрут</a></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="i18n.js?v=16"></script>
-<script src="app.js?v=16"></script>
+<script src="app.js?v=17"></script>
 </body>
 </html>

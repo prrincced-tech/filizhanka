@@ -21,6 +21,7 @@
     on.hidden = false;
     const tomorrowWeekend = day === 5 || day === 6;
     const T = window.fzT || (x => x);
+    on.classList.toggle('is-closed', !(min >= opens && min < closes));
     on.lastElementChild.textContent = T(min >= opens && min < closes ? 'Зараз відчинено · до 21:00'
       : min < opens ? `Сьогодні відчиняємось о ${day >= 6 ? '9:00' : '8:00'}`
       : `Завтра відчиняємось о ${tomorrowWeekend ? '9:00' : '8:00'}`);
@@ -182,8 +183,8 @@
   /* ---------- initial states ---------- */
   gsap.set('[data-hero-line]', { yPercent: 120 });
   gsap.set('[data-hero]', { y: 40, autoAlpha: 0 });
-  gsap.set('[data-hero-tile]', { clipPath: 'inset(100% 0% 0% 0%)' });
-  gsap.set('[data-hero-tile] img', { scale: 1.3 });
+  gsap.set('[data-hero-tile]', { autoAlpha: 0 });
+  
   gsap.set('[data-hero-card]', { y: 30, autoAlpha: 0 });
   gsap.set('.nav', { yPercent: -100 });
   const curtain = $('.curtain');
@@ -191,8 +192,7 @@
 
   const heroIn = () => gsap.timeline({ defaults: { ease: E } })
     .to('.nav', { yPercent: 0, duration: 1.2 }, 0)
-    .to('[data-hero-tile]', { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: E2, stagger: .12 }, 0)
-    .to('[data-hero-tile] img', { scale: 1, duration: 2.2, stagger: .12 }, 0)
+    .to('[data-hero-tile]', { autoAlpha: 1, duration: .9, ease: 'power1.out', stagger: .1 }, 0)
     .to('[data-hero-line]', { yPercent: 0, duration: 1.4, stagger: .12 }, .25)
     .to('[data-hero]', { y: 0, autoAlpha: 1, duration: 1.2, stagger: .08 }, .5)
     .to('[data-hero-card]', { y: 0, autoAlpha: 1, duration: 1.1 }, 1.1)
@@ -211,13 +211,12 @@
     const svg = $('.neon', loader), glow = $('.glow', loader), count = $('.loader__count', loader), n = { v: 0 };
     prepDraw(svg);
     const tl = gsap.timeline({ onComplete: () => loader.remove() });
-    tl.to(strokes(svg), { strokeDashoffset: 0, duration: 1.3, stagger: .18, ease: 'power2.inOut' }, .2)
-      .to(n, { v: 100, duration: 2.2, ease: 'power2.inOut', onUpdate: () => { count.textContent = Math.round(n.v); } }, 0);
-    flick(glow, tl, 1.6);
-    tl.to('.loader__word span', { y: 0, duration: 1, stagger: .05, ease: E }, 1.4)
-      .to('.loader__inner', { scale: .94, autoAlpha: 0, duration: .6, ease: 'power3.in' }, 2.9)
-      .to(loader, { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: E2 }, 3.25)
-      .add(start, 3.45);
+    tl.to(strokes(svg), { strokeDashoffset: 0, duration: .9, stagger: .1, ease: 'power2.inOut' }, .1)
+      .to(n, { v: 100, duration: 1.4, ease: 'power2.inOut', onUpdate: () => { count.textContent = Math.round(n.v); } }, 0);
+    flick(glow, tl, 1.0);
+    tl.to('.loader__word span', { y: 0, duration: .7, stagger: .03, ease: E }, .8)
+      .to(loader, { autoAlpha: 0, duration: .5, ease: 'power2.out' }, 1.9)
+      .add(start, 1.9);
     // safety net: a tab opened in the background must never stay behind the intro
     setTimeout(() => { if (tl.progress() < 1) tl.progress(1); }, 6000);
   } else {
@@ -229,15 +228,7 @@
   $$('[data-split]').forEach(h => gsap.from($$('.split-line > span', h), { yPercent: 120, duration: 1.3, stagger: .08, ease: E,
     scrollTrigger: { trigger: h, start: 'top 88%', once: true } }));
   $$('[data-fade]').forEach(el => gsap.from(el, { y: 40, autoAlpha: 0, duration: 1.2, ease: E, scrollTrigger: { trigger: el, start: 'top 92%', once: true } }));
-  $$('[data-reveal]').forEach(box => {
-    const img = $('img', box);
-    gsap.timeline({ scrollTrigger: { trigger: box, start: 'top 85%', once: true } })
-      .from(box, { clipPath: 'inset(100% 0% 0% 0%)', duration: 1.4, ease: E2 })
-      .from(img, { scale: 1.3, duration: 2, ease: E }, 0);
-  });
-  gsap.from('.story', { y: 30, autoAlpha: 0, duration: 1, stagger: .07, ease: E, scrollTrigger: { trigger: '.stories', start: 'top 90%', once: true } });
-  gsap.from('.g-item, .g-quote', { y: 60, autoAlpha: 0, duration: 1.2, stagger: .06, ease: E, scrollTrigger: { trigger: '.gallery__scroller', start: 'top 85%', once: true } });
-  $$('.item').forEach(r => gsap.from(r, { y: 20, autoAlpha: 0, duration: .9, ease: E, scrollTrigger: { trigger: r, start: 'top 95%', once: true } }));
+  $$('[data-reveal]').forEach(box => gsap.from(box, { autoAlpha: 0, duration: .8, ease: 'power1.out', scrollTrigger: { trigger: box, start: 'top 90%', once: true } }));
 
   // footer neon sign draws itself, then hums softly
   const fs = $('.footer__sign .neon');
@@ -311,27 +302,6 @@
     if (lenis) lenis.on('scroll', check); else addEventListener('scroll', check, { passive: true });
     addEventListener('blur', hidePreview);
     document.addEventListener('mouseleave', hidePreview);
-  }
-
-  /* ---------- cursor and magnetic buttons ---------- */
-  if (fine && !reduce) {
-    const cur = $('.cursor');
-    const cx = gsap.quickTo(cur, 'x', { duration: .4, ease: 'power3' }), cy = gsap.quickTo(cur, 'y', { duration: .4, ease: 'power3' });
-    addEventListener('mousemove', e => { cur.classList.add('on'); cx(e.clientX); cy(e.clientY); });
-    document.addEventListener('mouseleave', () => cur.classList.remove('on'));
-    $$('a, button, .item, .tags span, .stat, .scrollbar').forEach(el => {
-      el.addEventListener('mouseenter', () => cur.classList.add('is-link'));
-      el.addEventListener('mouseleave', () => cur.classList.remove('is-link'));
-    });
-    $$('[data-view]').forEach(el => {
-      el.addEventListener('mouseenter', () => cur.classList.add('is-view'));
-      el.addEventListener('mouseleave', () => cur.classList.remove('is-view'));
-    });
-    $$('.btn, .arrow').forEach(b => {
-      const xTo = gsap.quickTo(b, 'x', { duration: .6, ease: 'elastic.out(1, .4)' }), yTo = gsap.quickTo(b, 'y', { duration: .6, ease: 'elastic.out(1, .4)' });
-      b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .2); yTo((e.clientY - r.top - r.height / 2) * .3); });
-      b.addEventListener('mouseleave', () => { xTo(0); yTo(0); });
-    });
   }
 
   addEventListener('load', () => ScrollTrigger.refresh());
