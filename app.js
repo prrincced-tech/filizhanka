@@ -86,6 +86,13 @@
     }
   }
 
+  /* ---------- map: asleep until clicked, asleep again once scrolled away ---------- */
+  const map = $('.map');
+  if (map) {
+    $('.map__unlock', map).addEventListener('click', () => map.classList.add('is-live'));
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) map.classList.remove('is-live'); }), { threshold: 0 }).observe(map);
+  }
+
   if (!window.gsap || !window.ScrollTrigger) {
     loader && loader.remove();
     document.body.classList.remove('is-loading');
