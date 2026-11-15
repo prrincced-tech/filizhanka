@@ -312,7 +312,7 @@ html:not(.js) .loader { display: none; }
 .cups { background: var(--bg-2); border-block: 1px solid var(--line); }
 .cups .wrap { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(40px, 7vw, 120px); align-items: center; }
 .cups__photos { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; align-items: end; }
-.cups__a { aspect-ratio: 444 / 275; }
+.cups__a { aspect-ratio: 1080 / 640; }
 .cups__b { aspect-ratio: 444 / 235; margin-bottom: -60px; }
 .cups__text { display: grid; gap: 26px; justify-items: start; }
 .cups__text h2 { margin-top: -6px; }
