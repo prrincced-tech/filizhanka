@@ -332,3 +332,19 @@ html:not(.js) .loader { display: none; }
   .review { flex: 0 0 82%; scroll-snap-align: start; }
   .reviews__foot .btn { margin-left: 0; width: 100%; }
 }
+
+/* ---------- small motion touches ---------- */
+@keyframes flicker { 0%, 100% { opacity: 1; } 12% { opacity: .25; } 22% { opacity: 1; } 34% { opacity: .5; } 46% { opacity: 1; } }
+.logo:hover .neon { animation: flicker .9s steps(1) 1; }
+.btn, .nav__ig, .arrow { transition: background .25s, color .25s, border-color .25s, transform .25s var(--ease); }
+.btn:hover, .nav__ig:hover { transform: translateY(-2px); }
+.btn:active, .nav__ig:active, .arrow:active { transform: translateY(0) scale(.97); }
+.review { transition: transform .4s var(--ease), box-shadow .4s; }
+.review:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(42, 29, 26, .08); }
+.dessert__img img, .g-item img { transition: transform .7s var(--ease); }
+.dessert:hover .dessert__img img, .g-item:hover img { transform: scale(1.04); }
+.story__ring { transition: transform .35s var(--ease), border-color .3s; }
+.story:hover .story__ring { transform: scale(1.06) rotate(-3deg); border-color: var(--accent-hi); }
+.open-now i { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+.hero__photo img { will-change: transform; }

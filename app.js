@@ -227,7 +227,28 @@
   $$('[data-split]').forEach(h => gsap.from($$('.split-line > span', h), { yPercent: 120, duration: 1.3, stagger: .08, ease: E,
     scrollTrigger: { trigger: h, start: 'top 88%', once: true } }));
   $$('[data-fade]').forEach(el => gsap.from(el, { y: 40, autoAlpha: 0, duration: 1.2, ease: E, scrollTrigger: { trigger: el, start: 'top 92%', once: true } }));
-  $$('[data-reveal]').forEach(box => gsap.from(box, { autoAlpha: 0, duration: .8, ease: 'power1.out', scrollTrigger: { trigger: box, start: 'top 90%', once: true } }));
+  /* calm motion: things rise a little and fade in as they come into view, once */
+  const soft = { ease: 'power2.out', duration: .9 };
+  $$('[data-reveal]').forEach(box => {
+    const img = $('img', box);
+    gsap.timeline({ scrollTrigger: { trigger: box, start: 'top 88%', once: true } })
+      .from(box, { autoAlpha: 0, y: 30, ...soft })
+      .from(img, { scale: 1.08, duration: 1.6, ease: 'power2.out' }, 0);
+  });
+  $$('main h2').forEach(h => gsap.from(h, { autoAlpha: 0, y: 24, ...soft, scrollTrigger: { trigger: h, start: 'top 90%', once: true } }));
+  $$('.picks__grid, .reviews__grid, .vitrina__grid').forEach(g => gsap.from(g.children, { autoAlpha: 0, y: 36, stagger: .1, ...soft,
+    scrollTrigger: { trigger: g, start: 'top 85%', once: true } }));
+  gsap.from('.about__text p', { autoAlpha: 0, y: 24, stagger: .1, ...soft, scrollTrigger: { trigger: '.about__text', start: 'top 85%', once: true } });
+  $$('.menu__col').forEach((c, i) => gsap.from($$('h3, .item', c), { autoAlpha: 0, y: 16, stagger: .05, ...soft, delay: i * .12,
+    scrollTrigger: { trigger: c, start: 'top 85%', once: true } }));
+  gsap.from('.story', { autoAlpha: 0, scale: .85, stagger: .06, duration: .6, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.stories', start: 'top 92%', once: true } });
+  gsap.from('.g-item', { autoAlpha: 0, x: 60, stagger: .06, ...soft, scrollTrigger: { trigger: '.gallery__scroller', start: 'top 85%', once: true } });
+  gsap.from('.map__card', { autoAlpha: 0, y: 40, ...soft, scrollTrigger: { trigger: '.map', start: 'top 70%', once: true } });
+  // the big photo on the first screen drifts in slowly after the intro
+  const heroImg = $('.hero__photo img');
+  if (heroImg) gsap.fromTo(heroImg, { scale: 1.08 }, { scale: 1, duration: 6, ease: 'power1.out', delay: 1.8 });
+  // and moves a touch slower than the page while scrolling
+  if (heroImg) gsap.to(heroImg, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
   // footer neon sign draws itself, then hums softly
   const fs = $('.footer__sign .neon');
