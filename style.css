@@ -400,3 +400,6 @@ html:not(.js) .loader { display: none; }
 /* hero headline is a line, not the name: smaller so it sits in its column */
 .hero h1 { font-size: clamp(52px, 6vw, 104px); line-height: .98; letter-spacing: -.03em; }
 @media (max-width: 767px) { .hero h1 { font-size: clamp(48px, 14.5vw, 80px); } }
+/* each headline line stays on one line, so the slide-in mask never cuts a wrapped word */
+.hero h1 .split-line { white-space: nowrap; padding-bottom: .2em; margin-bottom: -.2em; }
+@media (min-width: 768px) and (max-width: 1023px) { .hero h1 { font-size: clamp(56px, 9vw, 92px); } }
