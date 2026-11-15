@@ -334,4 +334,19 @@
   }
 
   addEventListener('load', () => ScrollTrigger.refresh());
+
+  // cookie notice, once per browser
+  const ck = document.querySelector('.cookie');
+  if (ck) {
+    let seen = false;
+    try { seen = localStorage.getItem('fz-cookie') === '1'; } catch (e) {}
+    if (!seen) {
+      setTimeout(() => { ck.hidden = false; requestAnimationFrame(() => requestAnimationFrame(() => ck.classList.add('on'))); }, 2500);
+      ck.querySelector('.cookie__ok').addEventListener('click', () => {
+        try { localStorage.setItem('fz-cookie', '1'); } catch (e) {}
+        ck.classList.remove('on');
+        setTimeout(() => { ck.hidden = true; }, 500);
+      });
+    }
+  }
 })();

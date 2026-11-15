@@ -423,3 +423,44 @@ html:not(.js) .loader { display: none; }
   .hero__lead { font-size: 20px; max-width: 38ch; }
   .hero__photo { height: min(820px, calc(100vh - 170px)); }
 }
+
+/* cookie notice */
+.cookie { position: fixed; z-index: 60; left: 20px; bottom: 20px; max-width: 400px; display: flex; align-items: center; gap: 16px; padding: 16px 16px 16px 20px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 12px 36px rgba(42, 29, 26, .16); transform: translateY(20px); opacity: 0; transition: transform .5s var(--ease), opacity .5s var(--ease); }
+.cookie[hidden] { display: none; }
+.cookie.on { transform: none; opacity: 1; }
+.cookie p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.cookie .btn { flex: none; }
+.footer__dev a { color: var(--accent) !important; }
+@media (max-width: 767px) {
+  .cookie { left: 12px; right: 12px; max-width: none; bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .footer__bottom { flex-direction: column; }
+}
+
+/* ---------- less template, more print menu ---------- */
+/* small corners instead of soft rounded cards */
+.tile, .reveal-img, .dessert__img, .g-item, .pick__img, .menu__pic, .hero__photo, .item__photo img, .menu__preview { border-radius: 4px !important; }
+.map__card, .cookie { border-radius: 8px; }
+.btn, .map__unlock { border-radius: 6px; }
+.nav__ig, .arrow, .nav__burger { border-radius: 6px; }
+
+/* menu rows read like a printed menu: name … price */
+.item { align-items: flex-start; gap: 10px; padding: 11px 0; border-bottom: 0; }
+.item > span { flex: 0 1 auto; }
+.item::after { content: ""; order: 1; flex: 1 1 24px; align-self: flex-start; height: 1.05em; border-bottom: 2px dotted rgba(42, 29, 26, .28); }
+.item b { order: 2; }
+.item__more { order: 3; }
+.item__photo { order: 4; }
+.menu__col h3 + .item, .menu__col .item:first-of-type { padding-top: 16px; }
+
+/* reviews: quotes, not cards */
+.reviews__grid { gap: 32px; }
+.review { padding: 20px 0 0; background: none; border-radius: 0; border-top: 2px solid var(--ink); }
+.review:hover { transform: none; box-shadow: none; }
+.review blockquote { font-size: 19px; }
+.reviews__foot { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }
+@media (max-width: 767px) {
+  .reviews__head, .picks__head { flex-direction: column; align-items: flex-start; }
+  .review { flex-basis: 78%; }
+}
+.item > span small { width: 0; white-space: nowrap; }
+.item__more { align-self: flex-start !important; }
