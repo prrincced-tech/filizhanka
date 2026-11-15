@@ -14,8 +14,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..600&family=Manrope:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 <script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Філіжанка",
+  "url": "https://prrincced-tech.github.io/filizhanka/",
+  "image": "https://prrincced-tech.github.io/filizhanka/assets/rl/storefront.jpg",
+  "telephone": "+380508764055",
+  "servesCuisine": ["Кава", "Круасани", "Десерти"],
+  "priceRange": "₴",
+  "address": { "@type": "PostalAddress", "streetAddress": "вул. Ярослава Мудрого, 11", "addressLocality": "Біла Церква", "addressRegion": "Київська область", "postalCode": "09100", "addressCountry": "UA" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.7949314, "longitude": 30.1154681 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "21:00" }
+  ],
+  "hasMap": "https://maps.google.com/?cid=10240009255878699770",
+  "sameAs": ["https://www.instagram.com/filizhanka.bc/"]
+}
+</script>
 </head>
 <body class="is-loading">
 
@@ -67,7 +87,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero__copy">
-        <p class="hero__where" data-hero>Біла Церква, вул. Ярослава Мудрого, 11</p>
+        <p class="hero__where" data-hero><span class="open-now" hidden><i></i><span></span></span><span>Біла Церква, вул. Ярослава Мудрого, 11</span></p>
         <h1 aria-label="Філіжанка — почни день з філіжанки"><span class="split-line"><span data-hero-line>Почни день</span></span><span class="split-line"><span data-hero-line><em>з філіжанки</em></span></span></h1>
         <p class="hero__lead" data-hero>Кава, круасани й десерти. Щодня з 8:00, у вихідні з 9:00, до 21:00.</p>
         <div class="hero__actions" data-hero>
@@ -107,6 +127,21 @@
       <div class="about__side">
         <figure class="reveal-img about__photo" data-reveal><img src="assets/ig/p06.jpg" alt="Гості з кавою біля вікна" loading="lazy" style="object-position: 75% 50%"></figure>
         <figure class="reveal-img about__photo about__photo--b" data-reveal><img src="assets/rl/window-girl.jpg" alt="Гостя з чашкою в залі" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section picks" id="picks">
+    <div class="wrap">
+      <div class="picks__head">
+        <h2>Варто спробувати</h2>
+        <a class="link" href="#menu" data-link>Усе меню →</a>
+      </div>
+      <div class="picks__grid">
+        <article class="pick"><div class="pick__img"><img src="assets/rl/croissant-sandwich.jpg" alt="Круасан-сендвіч" loading="lazy"></div><div class="pick__row"><h3>Круасан з шинкою</h3><b>115 ₴</b></div><p>Сир, салат і томати в хрусткому круасані</p></article>
+        <article class="pick"><div class="pick__img"><img src="assets/rl/iced-latte.jpg" alt="Айс-лате у фірмовому стаканчику" loading="lazy"></div><div class="pick__row"><h3>Айс-лате</h3><b>80 ₴</b></div><p>Еспресо, молоко і багато льоду</p></article>
+        <article class="pick"><div class="pick__img"><img src="assets/rl/cold-window.jpg" alt="Напій Джміль" loading="lazy"></div><div class="pick__row"><h3>Джміль</h3><b>90 ₴</b></div><p>Апельсиновий фреш з еспресо</p></article>
+        <article class="pick"><div class="pick__img"><img src="assets/rl/macaron-dip.jpg" alt="Капучино з макаруном" loading="lazy"></div><div class="pick__row"><h3>Капучино</h3><b>65 ₴</b></div><p>А до нього — макарун з вітрини</p></article>
       </div>
     </div>
   </section>
@@ -235,6 +270,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="app.js?v=17"></script>
+<script src="app.js?v=18"></script>
 </body>
 </html>

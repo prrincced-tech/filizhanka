@@ -16,8 +16,7 @@
     if (day >= a && day <= b) r.classList.add('is-today');
   });
   const opens = day >= 6 ? 540 : 480, closes = 1260;
-  const on = $('.open-now');
-  if (on) {
+  $$('.open-now').forEach(on => {
     on.hidden = false;
     const tomorrowWeekend = day === 5 || day === 6;
     const T = window.fzT || (x => x);
@@ -25,7 +24,7 @@
     on.lastElementChild.textContent = T(min >= opens && min < closes ? 'Зараз відчинено · до 21:00'
       : min < opens ? `Сьогодні відчиняємось о ${day >= 6 ? '9:00' : '8:00'}`
       : `Завтра відчиняємось о ${tomorrowWeekend ? '9:00' : '8:00'}`);
-  }
+  });
 
   /* ---------- mobile menu ---------- */
   const burger = $('.nav__burger');

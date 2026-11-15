@@ -245,3 +245,29 @@ html:not(.js) .loader { display: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- open-now on the first screen ---------- */
+.hero__where { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; }
+.hero__where .open-now { margin: 0; }
+
+/* ---------- signature picks ---------- */
+.picks { padding-bottom: 24px; }
+.picks__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+.picks__head h2 { margin: 0; }
+.link { font-weight: 600; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.link:hover { text-decoration: underline; }
+.picks__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.pick__img { overflow: hidden; aspect-ratio: 4 / 5; border-radius: 16px; background: var(--surface); }
+.pick__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.pick:hover .pick__img img { transform: scale(1.04); }
+.pick__row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-top: 12px; }
+.pick__row h3 { font-size: 20px; }
+.pick__row b { white-space: nowrap; }
+.pick p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 1023px) { .picks__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) {
+  .picks__grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--pad); gap: 12px; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) 6px; scrollbar-width: none; }
+  .picks__grid::-webkit-scrollbar { display: none; }
+  .pick { flex: 0 0 72%; scroll-snap-align: start; }
+  .pick__row h3 { font-size: 18px; }
+}
