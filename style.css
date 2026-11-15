@@ -348,3 +348,20 @@ html:not(.js) .loader { display: none; }
 .open-now i { animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: .35; } }
 .hero__photo img { will-change: transform; }
+
+/* ---------- map: Google's info box pushed out of view, card on the right ---------- */
+.map__frame { inset: auto; top: -200px; left: -320px; width: calc(100% + 640px); height: calc(100% + 200px); }
+.map__wrap { justify-content: flex-end; }
+.map__unlock { right: auto; left: var(--pad); }
+.map__card { transition: transform .6s var(--ease), opacity .4s, box-shadow .4s; transform-origin: right center; }
+/* while someone moves the map, the card steps aside and comes back on hover */
+.map.is-moving .map__card { transform: translateX(62%) scale(.92); opacity: .55; box-shadow: 0 8px 20px rgba(42, 29, 26, .1); }
+.map.is-moving .map__card:hover { transform: none; opacity: 1; }
+.map__hint { position: absolute; z-index: 3; left: 50%; top: 24px; transform: translate(-50%, -12px); padding: 8px 14px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 13px; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity .35s, transform .35s var(--ease); }
+.map.is-live .map__hint { opacity: 1; transform: translate(-50%, 0); }
+.map.is-live.hint-done .map__hint { opacity: 0; transform: translate(-50%, -12px); }
+@media (max-width: 767px) {
+  .map__frame { top: -200px; left: -320px; width: calc(100% + 640px); height: calc(56vh + 200px); position: relative; margin-bottom: -200px; }
+  .map__unlock { left: 12px; right: auto; }
+  .map.is-moving .map__card { transform: none; opacity: 1; }
+}

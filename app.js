@@ -135,8 +135,16 @@
   /* ---------- map: asleep until clicked, asleep again once scrolled away ---------- */
   const map = $('.map');
   if (map) {
-    $('.map__unlock', map).addEventListener('click', () => map.classList.add('is-live'));
-    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) map.classList.remove('is-live'); }), { threshold: 0 }).observe(map);
+    const frame = $('.map__frame', map);
+    $('.map__unlock', map).addEventListener('click', () => {
+      map.classList.add('is-live'); map.classList.remove('hint-done');
+      setTimeout(() => map.classList.add('hint-done'), 2600);
+    });
+    // while the pointer is on the live map the card steps aside; it comes back when the pointer leaves the map
+    frame.addEventListener('mouseenter', () => { if (map.classList.contains('is-live')) map.classList.add('is-moving'); });
+    frame.addEventListener('mouseleave', () => map.classList.remove('is-moving'));
+    map.addEventListener('mouseleave', () => map.classList.remove('is-moving'));
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) map.classList.remove('is-live', 'is-moving'); }), { threshold: 0 }).observe(map);
   }
 
   if (!window.gsap || !window.ScrollTrigger) {
@@ -243,7 +251,7 @@
     scrollTrigger: { trigger: c, start: 'top 85%', once: true } }));
   gsap.from('.story', { autoAlpha: 0, scale: .85, stagger: .06, duration: .6, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.stories', start: 'top 92%', once: true } });
   gsap.from('.g-item', { autoAlpha: 0, x: 60, stagger: .06, ...soft, scrollTrigger: { trigger: '.gallery__scroller', start: 'top 85%', once: true } });
-  gsap.from('.map__card', { autoAlpha: 0, y: 40, ...soft, scrollTrigger: { trigger: '.map', start: 'top 70%', once: true } });
+  gsap.from('.map__card', { autoAlpha: 0, y: 40, ...soft, clearProps: 'transform,opacity,visibility', scrollTrigger: { trigger: '.map', start: 'top 70%', once: true } });
   // the big photo on the first screen drifts in slowly after the intro
   const heroImg = $('.hero__photo img');
   if (heroImg) gsap.fromTo(heroImg, { scale: 1.08 }, { scale: 1, duration: 6, ease: 'power1.out', delay: 1.8 });
