@@ -213,7 +213,8 @@
     ScrollTrigger.refresh();
   };
   let skipIntro = false;
-  try { skipIntro = sessionStorage.getItem('fz-skip-intro') === '1'; sessionStorage.removeItem('fz-skip-intro'); } catch (e) {}
+  // the neon intro plays once per visit; reloads and links within the same visit go straight to the page
+  try { skipIntro = sessionStorage.getItem('fz-intro-seen') === '1'; sessionStorage.setItem('fz-intro-seen', '1'); } catch (e) {}
   if (loader && !reduce && !skipIntro) {
     const svg = $('.neon', loader), glow = $('.glow', loader), count = $('.loader__count', loader), n = { v: 0 };
     prepDraw(svg);
