@@ -132,6 +132,15 @@
     </div>
   </section>
 
+  <section class="facts" aria-label="Коротко про нас">
+    <div class="wrap facts__row">
+      <div class="fact"><b>8:00</b><span>відкриваємось щодня<br>у вихідні з 9:00</span></div>
+      <div class="fact"><b>4,6 ★</b><span>516 відгуків<br>на Google</span></div>
+      <div class="fact"><b>з собою</b><span>у фірмовому стаканчику<br>і крафтовому пакеті</span></div>
+      <div class="fact"><b>центр</b><span>вул. Ярослава Мудрого, 11<br>Біла Церква</span></div>
+    </div>
+  </section>
+
   <section class="section about" id="about">
     <div class="wrap">
       <div class="about__text">
@@ -166,6 +175,7 @@
       <h2>Меню</h2>
       <div class="menu__grid">
         <div class="menu__col">
+          <div class="menu__pic"><img src="assets/rl/cappuccino.webp" alt="Капучино" loading="lazy"></div>
           <h3>Кава</h3>
           <div class="item" data-img="0"><span>Еспресо<small>30 мл</small></span><b>45 ₴</b></div>
           <div class="item" data-img="1"><span>Американо<small>200 мл</small></span><b>50 ₴</b></div>
@@ -174,6 +184,7 @@
           <div class="item" data-img="4"><span>Раф<small>вершковий</small></span><b>85 ₴</b></div>
         </div>
         <div class="menu__col">
+          <div class="menu__pic"><img src="assets/rl/red-sky.webp" alt="Холодний ягідний напій" loading="lazy"></div>
           <h3>Холодні напої</h3>
           <div class="item" data-img="5"><span>Холодна матча<small>на молоці, з льодом</small></span><b>95 ₴</b></div>
           <div class="item" data-img="6"><span>Лимонад<small>апельсин і м'ята</small></span><b>75 ₴</b></div>
@@ -182,6 +193,7 @@
           <div class="item" data-img="9"><span>Ягідне мохіто<small>безалкогольне</small></span><b>85 ₴</b></div>
         </div>
         <div class="menu__col">
+          <div class="menu__pic"><img src="assets/rl/tray-croissant.webp" alt="Круасан з кавою" loading="lazy"></div>
           <h3>Круасани</h3>
           <div class="item" data-img="10"><span>Зі сьомгою</span><b>145 ₴</b></div>
           <div class="item" data-img="11"><span>З шинкою</span><b>115 ₴</b></div>
@@ -214,7 +226,7 @@
     <div class="wrap">
       <h2>Десерти на вітрині</h2>
       <div class="vitrina__grid">
-        <figure class="dessert dessert--big reveal-img" data-reveal><img src="assets/hl/vitrina.webp" alt="Вітрина з десертами" loading="lazy"></figure>
+        <figure class="dessert dessert--big reveal-img"><img src="assets/hl/vitrina.webp" alt="Вітрина з десертами" loading="lazy"></figure>
         <article class="dessert"><div class="dessert__img"><img src="assets/hl/meringue.webp" alt="Меренговий рулет" loading="lazy"></div><h3>Меренговий рулет</h3><p>96 ₴</p></article>
         <article class="dessert"><div class="dessert__img"><img src="assets/hl/mochi.webp" alt="Моті" loading="lazy"></div><h3>Моті</h3><p>75 ₴</p></article>
         <article class="dessert"><div class="dessert__img"><img src="assets/rl/macaron-melt.webp" alt="Макарун" loading="lazy"></div><h3>Макарун</h3><p>фундук-карамель</p></article>
@@ -293,10 +305,27 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap footer__row">
-    <a class="logo" href="#top" data-link><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg>Філіжанка</a>
-    <p>вул. Ярослава Мудрого, 11, Біла Церква · <a href="tel:+380508764055">050 876 40 55</a> · <a href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener">@filizhanka.bc</a></p>
-    <p class="footer__copy">© 2026 Філіжанка</p>
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="logo" href="#top" data-link><svg class="neon" viewBox="-12 -12 144 124" aria-hidden="true"><use href="#logo"/></svg>Філіжанка</a>
+      <p>Міська кав'ярня в центрі Білої Церкви. Кава, круасани, десерти й атмосфера.</p>
+    </div>
+    <div>
+      <h4>Години</h4>
+      <p>Пн–Пт 8:00–21:00<br>Сб–Нд 9:00–21:00</p>
+    </div>
+    <div>
+      <h4>Адреса</h4>
+      <p><a href="#map" data-link>вул. Ярослава Мудрого, 11</a><br>Біла Церква</p>
+    </div>
+    <div>
+      <h4>Контакти</h4>
+      <p><a href="tel:+380508764055">050 876 40 55</a><br><a href="https://www.instagram.com/filizhanka.bc/" target="_blank" rel="noopener">@filizhanka.bc</a></p>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© 2026 Філіжанка</span>
+    <span><a href="#menu" data-link>Меню</a> · <a href="#vitrina" data-link>Десерти</a> · <a href="#gallery" data-link>Фото</a> · <a href="#map" data-link>Контакти</a></span>
   </div>
 </footer>
 
@@ -305,6 +334,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="app.js?v=27"></script>
+<script src="app.js?v=28"></script>
 </body>
 </html>
