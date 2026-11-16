@@ -482,3 +482,14 @@ html:not(.js) .loader { display: none; }
 }
 @media (max-width: 1023px) { .hero__photo { max-height: none; aspect-ratio: 1 / 1; width: 100%; } }
 @media (max-width: 767px) { .hero__photo { aspect-ratio: 4 / 5; } }
+
+/* dark accents on the light site: footer + address card (espresso) */
+.footer, .map__card {
+  --bg: #1f1714; --bg-2: #1f1714; --ink: #f1e7dc; --muted: #b3a399;
+  --line: rgba(241, 231, 220, .14); --accent: #d9576a; --accent-hi: #e46a7c;
+  background: var(--bg); color: var(--ink);
+}
+.map__card { box-shadow: 0 20px 50px rgba(20, 12, 10, .35); }
+.map__card .open-now { color: #7fcf9a; }
+.map__card .btn--solid { --accent: #8e1b2b; --accent-hi: #a8233a; }
+.map__card .btn:not(.btn--solid):hover { background: var(--ink); color: #1f1714; }
